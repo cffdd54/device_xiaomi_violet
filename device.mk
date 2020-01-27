@@ -390,6 +390,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyxml2
 
+# Perf
+-include vendor/qcom/common/av/qti-av.mk
+-include vendor/qcom/common/bt/qti-bt.mk
+-include vendor/qcom/common/perf/qti-perf.mk
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
