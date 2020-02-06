@@ -118,7 +118,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     liba2dpoffload \
     libbthost_if \
-    libldacBT_dec
+    libldacBT_dec \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor
 
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
