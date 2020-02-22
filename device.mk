@@ -361,6 +361,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     NexusLauncherRelease
 
+# Boot SPL
+BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/codec2.vendor.ext.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext.policy \
@@ -389,6 +392,9 @@ PRODUCT_PACKAGES += \
 # Touchscreen
 PRODUCT_PACKAGES += \
     libtinyxml2
+
+# Vendor SPL
+VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
 # Perf
 -include vendor/qcom/common/av/qti-av.mk
