@@ -25,7 +25,7 @@ TARGET_SCREEN_WIDTH := 1080
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-pa    
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -166,7 +166,7 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \
-    android.hardware.graphics.mapper@2.0-impl-qti-display \
+    android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     gralloc.sm6150 \
@@ -306,14 +306,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
-# ParanoidDoze
-PRODUCT_PACKAGES += \
-    ParanoidDoze
-
 # QCOM
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/telephony_product_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/telephony_product_privapp-permissions-qti.xml \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-qti.xml \
+    $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -409,11 +406,6 @@ PRODUCT_PACKAGES += \
 
 # Vendor SPL
 VENDOR_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
-
-# Perf
--include vendor/qcom/common/av/qti-av.mk
--include vendor/qcom/common/bt/qti-bt.mk
--include vendor/qcom/common/perf/qti-perf.mk
 
 # USB
 PRODUCT_PACKAGES += \
